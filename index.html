@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=150%">
+    <title> CART/DART 498 </title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div id="main"  >
+          <h1 style = "text-align:center;" > 
+            -scapes</h1>
+<!-- 
+          <p id="subtitle">  AI question generator</p>
+          <br> -->
+
+          <div style="text-align:center;">
+          <!-- <button id = "button1" onclick = "digitalSpaces1(), digitalSpaces2(), digitalSpaces3()">
+            generate
+          </button>   -->
+
+          <p id = "digitalSpacesResult1"> 
+            <br>
+            <br>
+            <br>
+          </p>
+                  
+          <p id = "digitalSpacesResult2" style="color:#85d1f5"> 
+
+          <br>
+          <br>
+          </p>
+
+          <div class="row" style="text-align:center;">
+            
+            <div class="column" >
+                   <script>
+                          function blurMe() {
+                            var element = document.getElementById("main");
+                            element.classList.add("blur");
+                            // setTimeout(function() {document.body.style.backgroundImage = "url('gif.gif')";}, 3000);
+                            setTimeout(function() {element.classList.remove("blur");}, 2500);
+                          }
+                   </script>
+                      <style>
+                        .blur {
+                        filter: blur(50px);
+                        -webkit-filter: blur(50px);
+                        -moz-filter: blur(50px);
+                        -o-filter: blur(50px);
+                        -ms-filter: blur(50px);
+                        }
+                     </style>
+                  <p id = "buttonclick1" style ="font-size: 20px; font-weight: bold;"> </p>
+                    <button id = "button1" onclick = "digitalSpaces1(), blurMe().fadeOut">
+                         Generate 
+                    </button>
+                    <button>
+                      <input type="button" id="buttonShow" value="Show Answer" onclick="btnShow();"> 
+                      <input type="button"id="buttonHide" value="Hide Answer" onclick="btnHide();"> 
+                    </button>
+
+              
+                  </div>
+          </div>
+  </div>   
+  
+
+</body>
+ 
+<script src="question1.js"></script>
+<script src="question2.js"></script>
+<script src="question3.js"></script>
+
+
+<script>
+
+  var x = document.getElementsByClassName('action-list')[0];
+
+  const countContainer = document.getElementById("countdown-number");
+
+ // Select action buttons
+ const startButton = document.getElementById("start");
+ const stopButton = document.getElementById("stop");
+ const resetButton = document.getElementById("reset");
+
+ // Select timeout Audio element
+ const timeoutAudio = document.getElementById("timeout_audio");
+
+ // variable to store count
+ var remainingTime = 10;
+
+ // variable to store time interval
+ var timer;
+
+ // Variable to track whether timer is running or not
+ var isStopped = true;
+
+ // Function to start Timer
+ const startTimer = () => {
+   startButton.style.background = "green";  
+   stopButton.style.background = "#e7d9fc"
+   x.style.display = "none";
+   if (isStopped) {
+     isStopped = false;
+     countContainer.innerHTML = remainingTime;
+     timer = setInterval(renderTime, 1000);
+   }
+ };
+
+ // Function to stop Timer
+ const stopTimer = () => {
+   startButton.style.background = "#e7d9fc";  
+   stopButton.style.background = "green"
+   isStopped = true;
+   if (timer) {
+     clearInterval(timer);
+   }
+ };
+
+ // Function to reset Timer
+ const resetTimer = () => {
+   isStopped = true;
+   clearInterval(timer);
+   remainingTime = 10;
+   countContainer.innerHTML = remainingTime;
+ };
+
+ // Initialize timeout sound
+ timeoutAudio.src = "http://soundbible.com/grab.php?id=1252&type=mp3";
+ timeoutAudio.load();
+
+ // Attach onclick event to buttons
+ startButton.onclick = startTimer;
+ resetButton.onclick = resetTimer;
+ stopButton.onclick = stopTimer;
+
+ // function to display time
+ const renderTime = () => {
+   // decement time
+   remainingTime -= 1;
+   // render count on the screen
+   countContainer.innerHTML = remainingTime;
+   // timeout on zero
+   if (remainingTime === 0) {
+     isStopped = true;
+     clearInterval(timer);
+     x.style.display = "block";
+     // Play audio on timeout
+     timeoutAudio.play();
+     remainingTime = 10;
+   }
+ };
+
+ startTimer();
+
+</script>
+
+
+</html>

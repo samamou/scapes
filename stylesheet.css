@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    /* padding: 50px; */
+  }
+
+  h1{
+    transform: rotate(5deg);
+    font-size: 60px;
+  }
+
+  body{
+    z-index: 1;
+    background-color: #000000;    
+    color: #000000;    
+    /* background-color:#000000; */
+    /* zoom: 150%; */
+    /* background-image:url(bg.png); */
+    /* background-image:url(gif.gif); */
+    overflow: hidden;
+  }
+
+  #blob{
+    z-index: 5;
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    /* background-size: 100%; */
+  }
+
+  #subtitle{
+    font-family:"Mrs Eaves", courier;
+    text-align:center;
+  }
+/* 
+  .div {
+    text-align:center;
+  } */
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    /* float: left; */
+    /* width: 30%; */
+    /* margin-left: 20px;
+    margin-right: 20px; */
+    /* padding: 10px; */
+    /* height: 100%; Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }  
+
+  #main {
+     height:100vh;
+    /* width: 100vh;  */
+    /* padding: 200px; */
+    /* height: 100px; */
+    background-image:url(pbg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+    padding: 80px;
+  }
+
+  button, #buttonShow, #buttonHide {
+    background: none;
+    /* text-decoration: underline; */
+    /* color: #ffffff; */
+    /* font-size: 20px; */
+    /* padding: 50px; */
+    /* text-decoration: none; */
+    border: none;
+  }
+
+/*   
+
+
+  button:hover {
+    background: #7e7e7e;
+    background-image: -webkit-linear-gradient(top, #323232, #323232);
+    text-decoration: none;
+  } */
